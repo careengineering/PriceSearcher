@@ -1,0 +1,1 @@
+# search_keyword = input('Aranacak ürün: ')
