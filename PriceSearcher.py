@@ -3,9 +3,10 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 items = {}
-search_keyword = "enjoy kedi maması 15"
+search_keyword = input("Search: ")
 
 def price_search(name,url,search_xpath,titles_css_selector,prices_css_selector,links_css_selector):
+
     driver = webdriver.Chrome()   
     driver.get(url)
 
@@ -29,6 +30,7 @@ def price_search(name,url,search_xpath,titles_css_selector,prices_css_selector,l
     driver.close()
     return items
 
+
 n11_values = {
     "name" : "N11",
     "url" : "https://www.n11.com/",
@@ -38,7 +40,13 @@ n11_values = {
     "links_css_selector" : "a.plink"
 }
 
-price_search(n11_values["name"],n11_values["url"],n11_values["search_xpath"],n11_values["titles_css_selector"],n11_values["prices_css_selector"],n11_values["links_css_selector"])
+price_search(n11_values["name"],
+             n11_values["url"],
+             n11_values["search_xpath"],
+             n11_values["titles_css_selector"],
+             n11_values["prices_css_selector"],
+             n11_values["links_css_selector"]
+             )
 
 trendyol_values = {
     "name" : "Trendyol",
@@ -49,9 +57,13 @@ trendyol_values = {
     "links_css_selector" : "div.p-card-chldrn-cntnr a"
 }
 
-price_search(trendyol_values["name"],trendyol_values["url"],trendyol_values["search_xpath"],trendyol_values["titles_css_selector"],trendyol_values["prices_css_selector"],trendyol_values["links_css_selector"])
-
-
+price_search(trendyol_values["name"],
+             trendyol_values["url"],
+             trendyol_values["search_xpath"],
+             trendyol_values["titles_css_selector"],
+             trendyol_values["prices_css_selector"],
+             trendyol_values["links_css_selector"]
+             )
 
 
 sorted_items = dict(sorted(items.items(), key= lambda x:x[1]))

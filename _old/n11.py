@@ -11,7 +11,8 @@ driver = webdriver.Chrome()
 
 # N11
 driver.get("https://www.n11.com/")
-searchInput = driver.find_element(By.XPATH, "/html/body/div[1]/header/div/div/div/div[1]/div/div/div[1]/form/input[1]")
+#searchInput = driver.find_element(By.XPATH, "/html/body/div[1]/header/div/div/div/div[1]/div/div/div[1]/form/input[1]")
+searchInput = driver.find_element(By.ID, "searchData")
 
 searchInput.send_keys(search_keyword)
 searchInput.send_keys(Keys.RETURN)
